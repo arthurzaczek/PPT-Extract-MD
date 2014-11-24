@@ -1,0 +1,5 @@
+Extract-All.ps1
+images/
+*.pptx
+SWE*.md
+*.ppt
