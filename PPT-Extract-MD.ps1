@@ -100,9 +100,12 @@ function renderParagraphs($paragraphs) {
 }
 
 function renderSourceCode($shape) {
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ { .cs }" | out-result
 	$shape.TextFrame2.TextRange.Text -split '[\r\n]' | ForEach {
-		"    $_" | out-result
+	    # ensure correct line ending
+		$_ | out-result
 	}
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" | out-result
 }
 
 function renderTextShape($shape, $heading) {
